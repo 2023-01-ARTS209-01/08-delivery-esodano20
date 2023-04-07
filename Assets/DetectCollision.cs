@@ -11,10 +11,14 @@ public class DetectCollision : MonoBehaviour
     SpriteRenderer spriteRenderer;
     [SerializeField]  Color hasPackageColor;
     [SerializeField]  Color doesNotHavePackageColor;
+    [SerializeField]  float collisionSpeed = 1f;
+    [SerializeField]  float triggerSpeed = 50f;  
   
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        float triggerAmount = Input.GetAxis("Vertical") * triggerSpeed * Time.deltaTime;
+        transform.Translate(0,triggerAmount,0);
     }
 
 
@@ -36,7 +40,7 @@ public class DetectCollision : MonoBehaviour
         if(trigger.gameObject.CompareTag("BoostPad"))
         {
             Debug.Log("Hit a boost pad wooo!!!");
-
+            spriteRenderer.float = triggerSpeed;
 
         }
 
