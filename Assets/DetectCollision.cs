@@ -11,9 +11,7 @@ public class DetectCollision : MonoBehaviour
     SpriteRenderer spriteRenderer;
     [SerializeField]  Color hasPackageColor;
     [SerializeField]  Color doesNotHavePackageColor;
-    [SerializeField] float driveSpeedup = 3.0f;
-    [SerializeField] float driveSpeeddown = 30.0f;
-
+  
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -27,8 +25,7 @@ public class DetectCollision : MonoBehaviour
         if(collision.gameObject.CompareTag("Obsticle"))
         {
             Debug.Log("We hit something!!!");
-            float driveSpeeddown = 3.0f;
-
+    
         }
     }
 
@@ -39,7 +36,7 @@ public class DetectCollision : MonoBehaviour
         if(trigger.gameObject.CompareTag("BoostPad"))
         {
             Debug.Log("Hit a boost pad wooo!!!");
-            float driveSpeedup = 30.0f;
+
 
         }
 
